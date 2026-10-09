@@ -1,14 +1,74 @@
-
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Change Calculator</title>
-  </head>
-  <body>
-    <!-- Write your markup here -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Change Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="calculator-card">
+    <header>
+      <h1>Change Calculator!</h1>
+    </header>
 
-    <!-- Don't forget to add your <script> tag here -->
+    <!-- Inputs -->
+    <section class="inputs-container">
+      <div class="input-group">
+        <label for="amount-due">Sale Amount</label>
+        <div class="input-field">
+          <span class="prefix">$</span>
+          <input type="number" id="amount-due" step="0.01" min="0" placeholder="0.00" />
+        </div>
+      </div>
 
-  </body>
+      <div class="input-group">
+        <label for="amount-received">Amount Tendered</label>
+        <div class="input-field">
+          <span class="prefix">$</span>
+          <input type="number" id="amount-received" step="0.01" min="0" placeholder="0.00" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Calculate Button -->
+    <button type="button" id="calculate-change">Calculate</button>
+
+    <!-- Results Display -->
+    <section class="results-container">
+      <div class="card dollar-card">
+        <h2>Dollars</h2>
+        <p id="dollars-output" class="metric-number">0</p>
+      </div>
+
+      <div class="coins-grid">
+        <div class="card coin-card">
+          <h3>Quarters</h3>
+          <span class="denom-badge">25¢</span>
+          <p id="quarters-output" class="metric-number">0</p>
+        </div>
+
+        <div class="card coin-card">
+          <h3>Dimes</h3>
+          <span class="denom-badge">10¢</span>
+          <p id="dimes-output" class="metric-number">0</p>
+        </div>
+
+        <div class="card coin-card">
+          <h3>Nickels</h3>
+          <span class="denom-badge">5¢</span>
+          <p id="nickels-output" class="metric-number">0</p>
+        </div>
+
+        <div class="card coin-card">
+          <h3>Pennies</h3>
+          <span class="denom-badge">1¢</span>
+          <p id="pennies-output" class="metric-number">0</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
 </html>
